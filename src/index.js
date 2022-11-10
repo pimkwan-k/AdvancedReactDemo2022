@@ -6,19 +6,22 @@ import './index.css';
 import MyComponent2 from './Components/MyComponent2';
 import reportWebVitals from './reportWebVitals';
 import MyContextProvider from './Components/MyContextProvider';
+import ErrorBoundary from './Components/ErrorBoundary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <MyContextProvider>
-  { /* <App /> */ }
-  { /* <MyComponent name="Gawee" /> */ }
-  { /* <MyChatContextProvider>
-      <Chat />
-      <ChatToolbar />
+    <MyContextProvider>
+      <ErrorBoundary>
+        { /* <App /> */}
+        { /* <MyComponent name="Gawee" /> */}
+        { /* <MyChatContextProvider>
+  <Chat />
+  <ChatToolbar />
 </MyChatContextProvider>*/ }
-    <MyComponent2 />
-  </MyContextProvider>
+        <MyComponent2 />
+      </ErrorBoundary>
+    </MyContextProvider>
   </React.StrictMode>
 );
 
